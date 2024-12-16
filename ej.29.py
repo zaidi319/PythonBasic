@@ -1,6 +1,15 @@
+"""
+Escriure un programa que converteixi el números binaris en enters.
+
+"""
+
 def bintodec(b):
-    return "hola"
+    aux = b[::-1]
+    d=0
+    for i,e in enumerate(b):
+        d+=int(e)*(2**i)
+    return d
 
 #programa principal
-a = input("introduce un numero en binari (nomes puede tener 0,s i l,s): ")
-print("el numero {}-binari es {}-decimal".format(a,bintodec))
+a = input("Introduexi un número en binari (només pot tenir 0's i 1's): ")
+print("El número {}-binari és {}-decimal".format(a,bintodec(a)))

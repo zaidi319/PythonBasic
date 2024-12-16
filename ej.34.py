@@ -1,53 +1,149 @@
-import random
-import time
 
-# Funció on expliquem què passa
-def intro():
-    print("En una època on els gegants governen Menorca. Nosaltres necessitem menjar,\n"
-          "Estem seguint el rastre de l'olor del menjar, però ens trobem en una cruïa.\n"
-          "Al final de cada camí hi ha un talaiot, en un viuen els gegants bons que ens convidaran\n"
-          "i en l'altre són uns caníbals afamats, i ens menjaran just ens vegin.\n")
 
-# Funció on demanem a quin talaiot volem anar
-def canvi_talaiot():
-    talaiot = ""
-    while talaiot != "1" and talaiot != "2":
-        talaiot = input("A quin Talaiot vols anar? Introdueixi 1 o 2: ")
-    return talaiot
 
-# Funció que ens indica si compartiran el menjar o serem nosaltres el seu àpat
-def trobada(talaiot_elegit):
-    print("T'estas apropant al talaiot...")
-    time.sleep(2)
-    print("Està fosc i és tenebrós...")
-    time.sleep(2)
-    print("Un gran gegant salta davant teu, t'agafa i ...\n\n")
-    time.sleep(2)
-    
-    gegantamic = random.randint(1, 2)
-    if talaiot_elegit == str(gegantamic):
-        print("Et convida a menjar...\n")
-        return True
-    else:
-        print("Se't menja d'un mos...ÑAMÑAMÑAM\n")
-        return False
 
-# Funció principal
-def main():
-    partida_nova = "si"
-    punts = 0
-    while partida_nova == "s" or partida_nova == "si":
-        intro()
-        talaiot_elegit = canvi_talaiot()
-        if trobada(talaiot_elegit):
-            punts += 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Definir una funció comptar_vocals() que donada una paraula, 
+compti el número de vegades que apareix cada vocal. Ex: comptar_vocals(“Ratapinyada”) 
+retorni1 HI ha 4 a’s, 0 e’s, 1 i’s, 0 o’s i 0 u’s.
+
+"""
+def comptar_vocals(p):
+    ap = [0,0,0,0,0]
+    for e in p:
+        if e == "a" or e=="A":
+            ap[0]+=1
+        elif e=="e" or e=="E":
+            ap[1]+=1
+        elif e=="i" or e=="I":
+            ap[2]+=1
+        elif e=="o" or e=="O":
+            ap[3]+=1
+        elif e=="u" or e=="U":
+            ap[4]+=1
         else:
-            print(f"Has perdut! Punts totals aconseguits: {punts}\n")
-            break
-        partida_nova = input("Vols tornar a jugar (mejar)? Introdueixi si o no: ")
-        print("\n")
-    if partida_nova != "s" and partida_nova != "si":
-        print(f"Punts totals aconseguits: {punts}\n")
+            print("{} no és una vocal".format(e))
+    print("La vocal a apareix {}-vegades \n la vocal e apareix {}-vegades \n la vocal i apareix {}-vegades \n la vocal o apareix {}-vegades \n la vocal u apareix {}-vegades".format(ap[0], ap[1], ap[2], ap[3], ap[4]))
 
-if __name__ == "__main__":
-    main()
+x = input("Intro paraula: ")
+comptar_vocals(x)
+
+
+
+
+
+
+
+
+
+
+
+
+

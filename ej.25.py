@@ -1,12 +1,17 @@
+"""
+Definir una funció gran_llista() que donada una llista de número ens retorni el més gran. 
+Ex: gran_llista([3, 4, 2, 3, 10]), retorni 10.
+"""
+
 def llegir_llista():
     l=[]
     a="a"
     while a!=".":
-        a=input("intruduce un numero: ")
+        a=input("Introdueix un número: ")
         if a!=".":
             l.append(int(a))
-    return l
-s=[]
-s=[7, 6, 3, 4, 2]
-def lledir_llista():
-    s=input(" este numero es mas mayor: ")
+def gran_llista(l):
+    return max(l)
+#Programa principal
+a = llegir_llista()
+print("El major de la llista {} és {}".format(a, gran_llista(a)))
